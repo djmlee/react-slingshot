@@ -15,7 +15,7 @@ import { hot } from "react-hot-loader";
 
 class App extends React.Component {
   render() {
-    const activeStyle = { color: 'blue' };
+    const activeStyle = { color: 'red' };
     return (
       <div>
         <div>
@@ -31,6 +31,12 @@ class App extends React.Component {
           <Route path="/about" component={AboutPage} />
           <Route component={NotFoundPage} />
         </Switch>
+          {/* 
+            Switch renders the first route that matches/includes the path 
+            Router 
+            Using <Router> would have render them all since "/fuel-savings" and "/about" both have /
+            Source: https://dev.to/danhjoo7/using-a-switch-component-in-react-router-d2k
+          */}
       </div>
     );
   }
