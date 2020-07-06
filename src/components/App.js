@@ -10,11 +10,33 @@ import React from "react";
 import { hot } from "react-hot-loader";
 import '../styles/app-styles.css';
 
-// This is a className-based component because the current
+// This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
 // component at the top-level.
 
-className App extends React.Component {
+class App extends React.Component {
+  
+  /* Experimental - Passing to Child Component */
+  constructor(props) {
+    super(props)
+
+    //Bind the this context to handler function
+    this.handler = this.handler.bind(this);
+
+    //Set some state
+    this.state = {
+      messageShown: false
+    };
+  }
+
+  //This method will be sent to child component
+  handler() {
+    this.setState({
+      messageShown: true
+    })
+  }
+  /* End of Experimental - Passing to Child Component */
+
   render() {
     const activeStyle = { color: 'red' };
     return (
@@ -38,29 +60,6 @@ className App extends React.Component {
             Using <Router> would have render them all since "/fuel-savings" and "/about" both have /
             Source: https://dev.to/danhjoo7/using-a-switch-component-in-react-router-d2k
           */}
-
-          {/* Demo Panels, feel free to delete */}
-          <div className="panel" data-color="violet">
-            <h2>Violet panel</h2>
-          </div>
-          <div className="panel" data-color="indigo">
-            <h2>Indigo panel</h2>
-          </div>
-          <div className="panel" data-color="blue">
-            <h2>Blue panel</h2>
-          </div>
-          <div className="panel" data-color="green">
-            <h2>Green panel</h2>
-          </div>
-          <div className="panel" data-color="yellow">
-            <h2>Yellow panel</h2>
-          </div>
-          <div className="panel" data-color="orange">
-            <h2>Orange panel</h2>
-          </div>
-          <div className="panel" data-color="red">
-            <h2>Red panel</h2>
-          </div>
       </div>
       
     );
