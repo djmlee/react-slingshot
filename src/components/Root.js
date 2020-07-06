@@ -16,7 +16,7 @@ export default class Root extends Component {
   render() {
     const { store, history } = this.props;
     return (
-      <Provider store={store}>
+      <Provider store={store} >
         <ConnectedRouter history={history}>
           <App />
         </ConnectedRouter>
