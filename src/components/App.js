@@ -7,7 +7,7 @@ import HomePage from "./HomePage";
 import NotFoundPage from "./NotFoundPage";
 import PropTypes from "prop-types";
 import React from "react";
-import { hot } from "react-hot-loader";
+import { hot } from "react-hot-loader"; //Documentation source: https://github.com/gaearon/react-hot-loader
 import '../styles/app-styles.css';
 
 // This is a class-based component because the current
@@ -17,6 +17,7 @@ import '../styles/app-styles.css';
 class App extends React.Component {
   
   /* Experimental - Passing to Child Component */
+  /*
   constructor(props) {
     super(props)
 
@@ -28,13 +29,15 @@ class App extends React.Component {
       messageShown: false
     };
   }
-
+  */
   //This method will be sent to child component
+  /*
   handler() {
     this.setState({
       messageShown: true
     })
   }
+  */
   /* End of Experimental - Passing to Child Component */
 
   render() {
@@ -60,8 +63,9 @@ class App extends React.Component {
             Using <Router> would have render them all since "/fuel-savings" and "/about" both have /
             Source: https://dev.to/danhjoo7/using-a-switch-component-in-react-router-d2k
           */}
-      </div>
-      
+
+
+        </div>
     );
   }
 }
